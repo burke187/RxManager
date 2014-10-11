@@ -3,11 +3,11 @@ class CreatePrescriptions < ActiveRecord::Migration
     create_table :prescriptions do |t|
     	t.integer :user_id
     	t.string :prescription_type
-		t.integer :sph
-		t.integer :cyl
+		t.float :sph
+		t.float :cyl
 		t.integer :axis
-		t.integer :bc
-		t.integer :diam
+		t.float :bc
+		t.float :diam
 
       t.timestamps
     end
