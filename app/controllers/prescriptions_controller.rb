@@ -43,7 +43,7 @@ class PrescriptionsController < ApplicationController
   # POST /prescriptions
   # POST /prescriptions.json
   def create
-    @prescription = Prescription.new(params[:prescription])
+    @prescription = @user.prescriptions.build(params[:prescription])
 
     respond_to do |format|
       if @prescription.save
@@ -83,7 +83,7 @@ class PrescriptionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
   def intercept_html_requests
     redirect_to('/') if request.format == Mime::HTML

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, on: :create
   validates :password, length: { minimum: 6 , message: "Password needs to be at least 6 characters" }, on: :create
 
-  has_many :prescriptions
+  has_many :prescriptions, dependent: :destroy
   # validates_associated :prescriptions
 
   has_secure_password
