@@ -6,6 +6,10 @@
       templateUrl: '../templates/users/index.html',
       controller: 'UserIndexCtrl'
     }).
+    when('/users/:id', {
+      templateUrl: '../templates/users/show.html',
+      controller: 'UserShowCtrl'
+    }).
     otherwise({
       templateUrl: '../templates/home.html',
       controller: 'HomeCtrl'

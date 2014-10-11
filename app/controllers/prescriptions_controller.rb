@@ -6,33 +6,21 @@ class PrescriptionsController < ApplicationController
   # GET /prescriptions.json
   def index
     @prescriptions = Prescription.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @prescriptions }
-    end
+    render json: @prescriptions
   end
 
   # GET /prescriptions/1
   # GET /prescriptions/1.json
   def show
     @prescription = Prescription.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @prescription }
-    end
+    render json: @prescription
   end
 
   # GET /prescriptions/new
   # GET /prescriptions/new.json
   def new
     @prescription = Prescription.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @prescription }
-    end
+    render json: @prescription
   end
 
   # GET /prescriptions/1/edit
@@ -47,10 +35,8 @@ class PrescriptionsController < ApplicationController
 
     respond_to do |format|
       if @prescription.save
-        format.html { redirect_to @prescription, notice: 'Prescription was successfully created.' }
         format.json { render json: @prescription, status: :created, location: @prescription }
       else
-        format.html { render action: "new" }
         format.json { render json: @prescription.errors, status: :unprocessable_entity }
       end
     end
@@ -63,10 +49,8 @@ class PrescriptionsController < ApplicationController
 
     respond_to do |format|
       if @prescription.update_attributes(params[:prescription])
-        format.html { redirect_to @prescription, notice: 'Prescription was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
         format.json { render json: @prescription.errors, status: :unprocessable_entity }
       end
     end
@@ -79,7 +63,6 @@ class PrescriptionsController < ApplicationController
     @prescription.destroy
 
     respond_to do |format|
-      format.html { redirect_to prescriptions_url }
       format.json { head :no_content }
     end
   end
