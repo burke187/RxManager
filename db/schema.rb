@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(:version => 20141011003220) do
 
   create_table "prescriptions", :force => true do |t|
-    t.string   "prescription_type"
     t.integer  "user_id"
-    t.integer  "sph"
-    t.integer  "cyl"
+    t.string   "prescription_type"
+    t.float    "sph"
+    t.float    "cyl"
     t.integer  "axis"
-    t.integer  "bc"
-    t.integer  "diam"
+    t.float    "bc"
+    t.float    "diam"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
