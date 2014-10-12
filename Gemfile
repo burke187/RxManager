@@ -5,6 +5,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'factory_girl_rails'
 gem 'faker'
 gem 'jbuilder', '~> 1.2'
+gem 'bootstrap-sass', '~> 2.3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

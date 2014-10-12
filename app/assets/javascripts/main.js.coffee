@@ -3,19 +3,19 @@
 @rxmanager.config(['$routeProvider', ($routeProvider) ->
   $routeProvider.
    when('/users', {
-      templateUrl: '../templates/users/index.html',
-      controller: 'UserIndexCtrl'
+      templateUrl: '../templates/users/user.html',
+      controller: 'UserCtrl'
     }).
-    when('/users/:id', {
+    when('/users/:userId', {
       templateUrl: '../templates/users/show.html',
       controller: 'UserShowCtrl'
     }).
     when('/users/:id/prescription', {
       templateUrl: '../templates/prescriptions/show.html',
-      controller: 'PrescriptionShowCtrl'
+      controller: 'PrescriptionCtrl'
     }).
     otherwise({
-      templateUrl: '../templates/home.html',
-      controller: 'HomeCtrl'
+      templateUrl: '../templates/index.html',
+      controller: 'IndexCtrl'
     })
 ])
